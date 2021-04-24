@@ -1,14 +1,13 @@
 <!-- This item was created by the help of bootstrap -->
 <div class="card">
     <div class="card-body">
-        <h2 class="card-title">Item One</h2>
-        <img src="https://sun9-65.userapi.com/impg/lj1wrCJzxNhj03oLu6XRAUWIqhMtHBeD89E4jw/FYkaLv-3R3A.jpg?size=1076x1076&quality=96&sign=e8ba3b322c24dc498f464b593f377088&type=album"
-            height="200px">
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
-            numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+        <h2 class="card-title">{{ product.name }}</h2>
+        <img [src]="product.img"
+            width="200px">
+        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa saepe aspernatur obcaecati at deserunt officia quasi quod voluptatem quisquam, nisi necessitatibus veritatis harum vel nulla quaerat a sint? Adipisci, consequuntur!</p>
     </div>
     <div class="card-footer">
-        <a href="#" class="mb-2 btn btn-primary ">$69</a>
-        <a href="#" class="mb-2 btn btn-primary btn-success ">Add to the cart</a>
+        <a href="#" class="mb-2 btn btn-primary "> {{ product.price | currency}} </a>
+        <a href="#" class="mb-2 btn btn-primary btn-success" (click)="addToCart()">Add to the cart</a>
     </div>
 </div>

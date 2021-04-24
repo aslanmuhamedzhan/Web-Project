@@ -1,0 +1,52 @@
+.cart-table {
+    margin-top: 10px;
+    margin-left:  20%;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background-color: #1c92fe;
+    font-weight: normal;
+}
+
+td a {
+    color: red;
+    font-size: 12px;
+    
+}
+
+td p {
+    font-weight: bold;
+}
+
+td small {
+    font-size: larger;
+}
+
+td:last-child {
+    text-align: right;
+}
+th:last-child {
+    text-align: right;
+}
+
+.totals {
+    margin-left:  20%;
+}
+
+.totals td {
+    padding: 10px;
+    background-color: F5fbff;
+}

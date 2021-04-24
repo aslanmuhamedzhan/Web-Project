@@ -4,15 +4,11 @@
             <app-categories></app-categories>
         </div>
         <div class="col-9">
-            <div class="card text-white bg-secondary my-5 py-4 text-center">
-                <div class="card-body">
-                    <p class="text-white m-0 p-0">Web Store by Our Team</p>
-                </div>
-            </div>
+            
             
             <div class="row">
-                <div class="col-md-4 mb-5" *ngFor="let i of [1,2,3,4,5]">
-                    <app-product-item></app-product-item>
+                <div class="col-md-4 mb-5" *ngFor="let product of products">
+                    <app-product-item [product]="product"></app-product-item>
                 </div>
             </div>
             

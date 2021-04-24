@@ -1,1 +1,41 @@
-<p>cart works!</p>
+<div *ngIf="cartNotEmpty()">  
+  <button (click)="clearCart()" routerLink="/cart/ordering" class="m-3 btn btn-outline-primary" type="submit" style="position: relative; left: 900px;">Purchase</button>
+  <div class="cart-table">
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let item of products">
+        <td>
+          <div class="cart-info">
+            <img [src]="item.img" style="height: 80px; margin-right: 10px;">
+            <div>
+              <p>{{ item.name }}</p>
+              <small>{{ item.price | currency}}</small>
+              <br>
+              <a href="">Remove</a>
+            </div>
+          </div>
+        </td>
+        <td>{{ item.price | currency}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="totals m-5">
+    <table>
+      <td style="font-weight: bold;">Total
+      </td>
+      <td style="font-weight: bold;">
+        {{totalPrice | currency}}
+      </td>
+    </table>
+  </div>
+</div>
+
+
+
+<div *ngIf="!cartNotEmpty()">
+  <h3 style=" text-align:center; color: #0a0a0a;">Your cart is Empty BRUH</h3>
+</div>

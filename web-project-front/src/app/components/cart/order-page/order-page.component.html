@@ -1,0 +1,26 @@
+
+<form class="m-4 w-25">
+    <h4 class="ml-5">Order Details</h4>
+    <div class="form-group">
+        <label>Address </label>
+        <input type="text" class="form-control" placeholder="Address" [(ngModel)]='order.OrdererAdress'
+            name="OrdererAdress">
+    </div>
+    <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="order.OrdererFirstName"
+            name="OrdererFirstName">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]='order.OrdererLastName'
+            name="OrdererLastName">
+    </div>
+
+    <div class="form-group">
+        <label>Postal Code</label>
+        <input type="text" class="form-control" placeholder="Postal Code" [(ngModel)]='order.OrdererPostalCode'
+            name="OrdererPostalCode">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="createOrder();">Submit</button>
+</form>

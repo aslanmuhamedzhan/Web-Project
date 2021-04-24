@@ -11,6 +11,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { CategoryItemComponent } from './components/categories/category-item/category-item.component';
 import { RouterModule } from "@angular/router";
 import { CartComponent } from './components/cart/cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoryProductsComponent } from './components/categories/category-products/category-products.component';
+import { OrderPageComponent } from './components/cart/order-page/order-page.component';
+import { LoginComponent } from './components/account/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,18 @@ import { CartComponent } from './components/cart/cart.component';
     FooterComponent,
     CategoriesComponent,
     CategoryItemComponent,
-    CartComponent
+    CartComponent,
+    CategoryProductsComponent,
+    OrderPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+
 ],
   providers: [],
   bootstrap: [AppComponent]
