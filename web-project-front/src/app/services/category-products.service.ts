@@ -13,10 +13,12 @@ export class CategoryProductsService {
 
     this.category = category;
 
-    prService.getProductItems().forEach((element)=>{
-      if (element.category == this.category.id) {
-        this.products.push(element);
-      }
+    prService.getProductItems().subscribe((products)=>{
+      products.forEach((element)=>{
+        if (element.category.id == this.category.id) {
+          this.products.push(element);
+        }
+      })
     })
   }
 

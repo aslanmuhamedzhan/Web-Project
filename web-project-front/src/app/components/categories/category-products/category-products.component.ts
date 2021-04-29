@@ -22,14 +22,28 @@ export class CategoryProductsComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.route.snapshot.paramMap.get('id');
-    this.allCategories = this.catService.getCategories();
-    this.category = this.allCategories.find(category => category.id === parseInt(id!))!;
-
-    this.prService.getProductItems().forEach((element)=>{
-      if (element.category == this.category.id) {
-        this.products.push(element);
-      }
+    this.catService.getCategories().subscribe((categories)=>{
+      this.allCategories = categories;
+      this.category = categories.find(category => category.id === parseInt(id!))!;
     })
+    // this.category = this.allCategories.find(category => category.id === parseInt(id!))!;
+
+    // this.prService.getProductItems().forEach((element)=>{
+    //   if (element.category.id == this.category.id) {
+    //     this.products.push(element);
+    //   }
+    // })
+
+    this.prService.getProductItems().subscribe((products)=>{
+      products.forEach((element)=>{
+        console.log(this.category.id);
+        if (element.category.id == this.category.id) {
+          this.products.push(element); 
+        }
+      })
+    })
+
+    // console.log(this.category.id);
   }
 
 

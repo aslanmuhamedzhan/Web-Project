@@ -19,12 +19,12 @@ export class CategoryService {
   constructor(private http: HttpClient,
               private prService: ProductService) { }
 
-  getCategories() {
-    return this.categories;
-  }
-
-  // getCategories(): Observable<Category[]> {
-  //   return this.http.get<Category[]>(`${this.ROOT_URL}/api/categories/`);     //Gotta implement Endpoint with Serializer at the Django side
+  // getCategories() {
+  //   return this.categories;
   // }
+
+  getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(`${this.ROOT_URL}/api/categories/`);     //Gotta implement Endpoint with Serializer at the Django side
+  }
 
 }

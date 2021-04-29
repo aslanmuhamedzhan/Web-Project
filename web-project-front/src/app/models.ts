@@ -3,7 +3,10 @@ export interface Product {
     name: string,
     price: number,
     img: string,
-    category: number
+    category: {
+        id:number,
+        name:string
+    }
 }
 
 export interface Category {
@@ -11,10 +14,10 @@ export interface Category {
     name: string
 }
 
-export interface Cart {
 
-}
-
-export interface LikedProducts {
-
+export interface Order {
+    firstName: string,
+    secondName: string,
+    address: string,
+    postalCode: string
 }
