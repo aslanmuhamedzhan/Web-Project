@@ -21,3 +21,7 @@ export interface Order {
     address: string,
     postalCode: string
 }
+
+export interface AuthToken{
+    token:string;
+}

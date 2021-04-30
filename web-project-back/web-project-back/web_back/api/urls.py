@@ -1,10 +1,13 @@
 from django.urls import path
 
-from api.views import category_list, product_list, products_by_category, order_list
+from api.views import feedback, category_list, ProductList, OrderDetails, OrderList
+from rest_framework_jwt.views import obtain_jwt_token
 
 urlpatterns = [
     path('categories/', category_list),
-    path('products/all', product_list),
-    path('products/<str:name>', products_by_category),
-    path('orders/', order_list)
+    path('products/all', ProductList.as_view()),
+    path('orders/<int:pk>/', OrderDetails.as_view()),
+    path('feedbacks/', feedback),
+    path('orders/', OrderList.as_view()),
+    path('login/', obtain_jwt_token)
 ]
