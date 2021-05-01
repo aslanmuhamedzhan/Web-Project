@@ -29,7 +29,11 @@ export class OrderPageComponent implements OnInit {
     };
 
     this.orderService.create(data).subscribe();
+    this.order.OrdererAdress='';
+    this.order.OrdererFirstName='';
+    this.order.OrdererLastName='';
+    this.order.OrdererPostalCode= '';
+    alert("Your Order is sent")
   }
 
 }
-
