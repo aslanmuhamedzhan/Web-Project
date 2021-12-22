@@ -19,7 +19,15 @@ class ProductItemSerializer(serializers.Serializer):
     description = serializers.CharField()
     price = serializers.FloatField()
     img=serializers.CharField()
-    category = CategorySerializer() # Gotta google this(Serializing foreign key)
+    category = CategorySerializer()
+
+    def create(self, validated_data):
+        product = ProductItem.objects.create(name=validated_data['name'], 
+                                        description=validated_data['description'],
+                                        price=validated_data['price'],
+                                        img=validated_data['img'],
+                                        category=Category.objects.get(id=validated_data['category'].get('id')))
+        return product
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
